@@ -1,0 +1,29 @@
+name: 'Spider card card in TianJin'
+
+on:
+  push:
+    branches: 
+      - master
+  schedule:
+    - cron: '* */1 * * *'
+
+jobs:
+  Spider-CarCard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v2
+      - name: 'Set up Python'
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+      - name: 'Install requirements'
+        run: pip install -r Spider-CarCard/requirements.txt
+      - name: 'Working'
+        env:
+          APPLYCODE: ${{secrets.APPLYCODE}}
+          HOST: ${{secrets.HOST}}
+          USERNAME: ${{secrets.USERNAME}}
+          PASSWORD: ${{secrets.PASSWORD}}
+          RECIVE_MAIL: ${{secrets.RECIVE_MAIL}}
+        run: python Spider-CarCard/Spider-CarCard.py
