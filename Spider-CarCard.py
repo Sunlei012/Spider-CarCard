@@ -65,4 +65,4 @@ if __name__ == "__main__":
             print("found")
 
     else :
-        print("not")
+        print(APPLYCODE,USERNAME,HOST,RECIVE_MAIL)
