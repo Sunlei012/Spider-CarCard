@@ -18,7 +18,7 @@ jobs:
         with:
           python-version: 3.7
       - name: 'Install requirements'
-        run: pip install -r Spider-CarCard/requirements.txt
+        run: pip install -r requirements.txt
       - name: 'Working'
         env:
           APPLYCODE: ${{secrets.APPLYCODE}}
@@ -26,4 +26,4 @@ jobs:
           USERNAME: ${{secrets.USERNAME}}
           PASSWORD: ${{secrets.PASSWORD}}
           RECIVE_MAIL: ${{secrets.RECIVE_MAIL}}
-        run: python Spider-CarCard/Spider-CarCard.py
+        run: python Spider-CarCard.py
