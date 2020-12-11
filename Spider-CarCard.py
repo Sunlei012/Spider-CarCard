@@ -48,7 +48,7 @@ if __name__ == "__main__":
     soup = BeautifulSoup(text,'lxml')
     option = soup.find_all('option')
     #print(option)
-    fo = open("CarCardTime.txt","r+")
+    fo = open("CarCardTime.txt","w+")
     print(fo.read())
     print(str(option))
     if fo.read() != str(option):
