@@ -48,21 +48,21 @@ if __name__ == "__main__":
     soup = BeautifulSoup(text,'lxml')
     option = soup.find_all('option')
     #print(option)
-    # fo = open("CarCardTime.txt","r+")
-    # print(fo.read())
-    # print(str(option))
-    # if fo.read() != str(option):
-    #     print("ttt")
-    #
-    #     fo.write(str(option))
-    if str(issueNumber) in str(option):
-        string = "/apply/images/mall/notBallot.png"
-        if string in text:
-            print("not found")
-            email("未中签","抱歉此次摇号没有摇中，申请编号为"+applyCode)
-        else:
-            email("中签！","恭喜本次摇号您已摇中,申请编号为"+applyCode)
-            print("found")
+    fo = open("CarCardTime.txt","r+")
+    print(fo.read())
+    print(str(option))
+    if fo.read() != str(option):
+        print("ttt")
+    
+        fo.write(str(option))
+        if str(issueNumber) in str(option):
+            string = "/apply/images/mall/notBallot.png"
+            if string in text:
+                print("not found")
+                email("未中签","抱歉此次摇号没有摇中，申请编号为"+applyCode)
+            else:
+                email("中签！","恭喜本次摇号您已摇中,申请编号为"+applyCode)
+                print("found")
 
-    else :
-        print(APPLYCODE,USERNAME,HOST,RECIVE_MAIL)
+        else :
+            print(APPLYCODE,USERNAME,HOST,RECIVE_MAIL)
