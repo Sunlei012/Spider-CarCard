@@ -48,12 +48,13 @@ if __name__ == "__main__":
     soup = BeautifulSoup(text,'lxml')
     option = soup.find_all('option')
     #print(option)
-    fo = open("CarCardTime.txt","w+")
-    print(fo.read())
-    print(str(option))
+    fo = open("CarCardTime.txt","r")
     if fo.read() != str(option):
+        fo = open("CarCardTime.txt","r")
         print("ttt")
-    
+        print(fo.read())
+       # print(str(option))
+        fo = open("CarCardTime.txt","w+")
         fo.write(str(option))
         if str(issueNumber) in str(option):
             string = "/apply/images/mall/notBallot.png"
